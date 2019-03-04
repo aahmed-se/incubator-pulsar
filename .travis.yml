@@ -5,13 +5,29 @@ matrix:
   - os: osx
     osx_image: xcode10.1
     python: "2.7"
-    before_install:
-        - brew update && brew install openssl git boost pkg-config jsoncpp cmake protobuf python@2 boost-python
+    addons:
+        homebrew:
+            casks:
+            - openssl 
+            - boost 
+            - pkg-config 
+            - jsoncpp 
+            - cmake 
+            - protobuf
+            - boost-python
   - os: osx
     python: "2.7"
     osx_image: xcode10.2
-    before_install:
-        - brew update && brew install openssl git boost pkg-config jsoncpp cmake protobuf python@2 boost-python
+        addons:
+        homebrew:
+            casks:
+            - openssl 
+            - boost 
+            - pkg-config 
+            - jsoncpp 
+            - cmake 
+            - protobuf
+            - boost-python
 install:
     - cd pulsar-client-cpp
     - cmake . -DBUILD_TESTS=OFF -DLINK_STATIC=ON
