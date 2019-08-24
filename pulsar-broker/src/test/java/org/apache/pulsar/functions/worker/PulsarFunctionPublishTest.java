@@ -265,7 +265,12 @@ public class PulsarFunctionPublishTest {
         return new WorkerService(workerConfig);
     }
 
-    protected static FunctionConfig createFunctionConfig(String tenant, String namespace, String functionName, String sourceTopic, String publishTopic, String subscriptionName) {
+    protected static FunctionConfig createFunctionConfig(String tenant,
+                                                         String namespace,
+                                                         String functionName,
+                                                         String sourceTopic,
+                                                         String publishTopic,
+                                                         String subscriptionName) {
 
         FunctionConfig functionConfig = new FunctionConfig();
         functionConfig.setTenant(tenant);
@@ -284,7 +289,7 @@ public class PulsarFunctionPublishTest {
         return functionConfig;
     }
 
-    @Test(timeOut = 20000)
+    @Test
     public void testPulsarFunctionState() throws Exception {
 
         final String namespacePortion = "io";
