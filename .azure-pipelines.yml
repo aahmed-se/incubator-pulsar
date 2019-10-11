@@ -1,0 +1,10 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- task: Unit Tests
+  displayName: 'Unit Tests'
+
+- script: |
+    mvn install
+  displayName: 'Running Unit tests'
