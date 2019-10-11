@@ -1,10 +1,10 @@
-pool:
-  vmImage: 'Ubuntu 16.04'
+jobs:
 
-steps:
-- task: Unit Tests
-  displayName: 'Unit Tests'
-
-- script: |
-    mvn install
-  displayName: 'Running Unit tests'
+- job: 'Unit Tests'
+  pool:
+    vmImage: ubuntu-16.04
+  timeoutInMinutes: 90
+  steps:
+  - script: |
+      mvn install
+    displayName: 'Running Unit tests'
