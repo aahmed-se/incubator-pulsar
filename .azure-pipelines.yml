@@ -1,6 +1,6 @@
 jobs:
 
-- job: 'Unit Tests'
+- job: Unit Tests
   pool:
     vmImage: ubuntu-16.04
   timeoutInMinutes: 90
