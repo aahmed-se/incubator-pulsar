@@ -117,6 +117,9 @@ unset(OPENSSL_SSL_LIBRARIES CACHE)
 unset(OPENSSL_LIBRARIES CACHE)
 unset(OPENSSL_VERSION CACHE)
 
+# find_library(CURL_LIBRARIES NAMES curl libcurl)
+# find_package(ZLIB REQUIRED)
+
 if (LINK_STATIC)
     find_library(ZLIB_LIBRARIES REQUIRED NAMES libz.a z zlib)
     find_library(Protobuf_LITE_LIBRARIES NAMES libprotobuf-lite.a libprotobuf-lite)
@@ -151,7 +154,7 @@ if (LINK_STATIC)
     endif()
 
     SET(Boost_USE_STATIC_LIBS   ON)
-    # SET(OPENSSL_USE_STATIC_LIBS TRUE)
+    SET(OPENSSL_USE_STATIC_LIBS TRUE)
 else()
     # Link to shared libraries
     find_package(ZLIB REQUIRED)
